@@ -1,3 +1,4 @@
+import CreateUserModal from '../components/CreateUserModal'
 import LoginModal from '../components/LoginModal'
 
 const Login = () => {
@@ -8,6 +9,7 @@ const Login = () => {
         <p>Bienvenidos</p>
       </div>
       <LoginModal/>
+      <CreateUserModal/>
     </div>
   )
 }

@@ -22,7 +22,7 @@ const LoginModal = () => {
     const mail = e.target.email.value;
     const pass = e.target.password.value;
 
-    if (mail === "correo@prueba.com" && pass === "1234") {
+    if (mail === "sergio@morales.com" && pass === "Hola123") {
       navigate("/blog");
     } else {
       alert("Su mail o password son invalidos");
