@@ -25,7 +25,7 @@ const LoginModal = () => {
     if (mail === "sergio@morales.com" && pass === "Hola123") {
       navigate("/blog");
     } else {
-      alert("Su mail o password son invalidos");
+      alert("Su email o password son invalidos");
     } 
   }
 
