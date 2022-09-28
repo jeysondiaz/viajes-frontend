@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   Button,
   Form,
@@ -9,44 +8,45 @@ import {
   ModalHeader,
 } from "reactstrap";
 
-import IUser, { USER_DUMMY } from "../../types/IUser";
-import CreateUserForm from "./CreateUserForm";
-import { createUser } from "../../api";
+import CreateBlogForm from "./CreateBlogForm";
+import { createBlog } from "../../api";
+import IBlog from "../../types/IBlog";
 
-const CreateUserModal = () => {
+const CreateBlogModal = () => {
   const [open, setOpen] = useState(false);
-  const [user, setUser] = useState<IUser>(USER_DUMMY);
-  const navigate = useNavigate();
+  const [blog, setBlog] = useState<IBlog>({
+    title: "",
+    description: "",
+  });
 
   const handleOpen = () => setOpen(!open);
 
-  const handleUser = async (e: any) => {
+  const handleBlog = async (e: any) => {
     e.preventDefault();
 
     try {
-      const response = await createUser(user);
-      localStorage.setItem("USER", JSON.stringify(response));
-      navigate("/blog");
+      await createBlog(blog);
+      setOpen(!open);
     } catch (error) {
       console.error(error);
-      alert("La información es invalida");
+      alert("Hubo un error al crear el blog");
     }
   };
 
   return (
     <div>
       <Button color="primary" onClick={handleOpen}>
-        Crear Usuario
+        Crear Blog
       </Button>
       <Modal isOpen={open} toggle={handleOpen}>
-        <ModalHeader toggle={handleOpen}>Login</ModalHeader>
-        <Form onSubmit={handleUser}>
+        <ModalHeader toggle={handleOpen}>Nuevo Blog</ModalHeader>
+        <Form onSubmit={handleBlog}>
           <ModalBody>
-            <CreateUserForm user={user} setUser={setUser} />
+            <CreateBlogForm blog={blog} setBlog={setBlog} />
           </ModalBody>
           <ModalFooter>
             <Button type="submit" color="primary">
-              Crear usuario
+              Crear blog
             </Button>{" "}
             <Button color="secondary" onClick={handleOpen}>
               Cancelar
@@ -58,4 +58,4 @@ const CreateUserModal = () => {
   );
 };
 
-export default CreateUserModal;
+export default CreateBlogModal;

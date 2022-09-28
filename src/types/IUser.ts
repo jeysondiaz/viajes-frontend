@@ -1,7 +1,7 @@
 import IRole from "./IRole";
 
 export default interface IUser {
-  idUser: string;
+  idUser?: number;
 	name: string;
 	surname: string;
 	email: string;
@@ -11,7 +11,6 @@ export default interface IUser {
 }
 
 export const USER_DUMMY: IUser = {
-  idUser: "",
   email: "",
   password: "",
   name: "",

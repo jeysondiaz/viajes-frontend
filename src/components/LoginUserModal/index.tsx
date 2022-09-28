@@ -8,25 +8,29 @@ import {
   ModalFooter,
   ModalHeader,
 } from "reactstrap";
+import { getLoginAcces } from "../../api";
 import LoginForm from "./LoginForm";
 
-const LoginModal = () => {
+const LoginUserModal = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleOpen = () => setOpen(!open);
 
-  const handleLogin = (e: any) => {
+  const handleLogin = async (e: any) => {
     e.preventDefault();
 
     const mail = e.target.email.value;
     const pass = e.target.password.value;
 
-    if (mail === "sergio@morales.com" && pass === "Hola123") {
+    try {
+      const response = await getLoginAcces(mail, pass);
+      localStorage.setItem("USER", JSON.stringify(response));
       navigate("/blog");
-    } else {
+    } catch (error) {
       alert("Su email o password son invalidos");
-    } 
+      console.error(error)
+    }
   }
 
   return (
@@ -54,4 +58,4 @@ const LoginModal = () => {
   );
 };
 
-export default LoginModal;
+export default LoginUserModal;

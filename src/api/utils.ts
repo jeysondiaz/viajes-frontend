@@ -3,6 +3,8 @@ export const getURL = () => {
 }
 
 export enum Paths {
-  LOGIN="/login/sesion",
-  CREATE_USER="/register/user"
+  LOGIN="/login/",
+  CREATE_USER="/register/user",
+  GET_BLOG="/review/",
+  CREATE_BLOG="/review/saveByUser/"
 }

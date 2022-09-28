@@ -1,8 +1,9 @@
 import { RouteObject } from "react-router-dom";
 
 import Login from "../../pages/Login";
-import Blog from "../../pages/Blog";
+import Blogs from "../../pages/Blogs";
 import BlogInfo from "../../pages/BlogInfo";
+import ProtectedRoute from "./ProtectedRoute";
 
 const Routes: RouteObject[] = [
   {
@@ -11,12 +12,18 @@ const Routes: RouteObject[] = [
   },
   {
     path: "/blog",
-    element: <Blog />,
+    element: (
+      <ProtectedRoute>
+        <Blogs />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/blog/:id",
-    element: <BlogInfo />,
-  }
+    element: <ProtectedRoute>
+      <BlogInfo />
+    </ProtectedRoute>,
+  },
 ];
 
 export default Routes;
