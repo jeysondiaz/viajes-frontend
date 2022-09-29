@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { Button, Spinner } from "reactstrap";
+import { Spinner } from "reactstrap";
 import { getBlogById } from "../api";
 import Header from "../components/utils/Header";
 import IBlog from "../types/IBlog";

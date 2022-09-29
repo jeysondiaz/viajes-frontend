@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Button, Row } from "reactstrap";
+import { Row } from "reactstrap";
 import { getAllBlogs } from "../api/blog";
 import BlogCard from "../components/BlogCard";
 import CreateBlogModal from "../components/CreateBlogModal";
@@ -9,8 +8,7 @@ import IBlog from "../types/IBlog";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState<IBlog[]>([]);
-  const navigate = useNavigate();
-
+  
   useEffect(() => {
     handleCreation();
     // eslint-disable-next-line
