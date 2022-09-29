@@ -10,7 +10,8 @@ const Login = () => {
     <div className="home">
       <div className="text-white text-center">
         <h1>Viajes Blog</h1>
-        <p>Bienvenidos</p>
+        <p>Bienvenido, esta web te permite consultar y escribir reseñas de viajes. </p>
+        <p>Ingresa para continuar y hacer parte de nuestro blog</p>
       </div>
       <LoginUserModal />
       <br />

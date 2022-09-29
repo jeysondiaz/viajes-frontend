@@ -38,7 +38,7 @@ const BlogsTable = () => {
           <th scope="row">3</th>
           <td>Viaje Mexico</td>
           <td>05/03/2019</td>
-          <td>@sergio</td>
+          <td>@juan</td>
           <td><Button onClick={() => handleSelectBlog("3", [])}>Ver</Button></td>
         </tr>
       </tbody>

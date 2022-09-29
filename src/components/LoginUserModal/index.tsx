@@ -28,7 +28,7 @@ const LoginUserModal = () => {
       localStorage.setItem("USER", JSON.stringify(response));
       navigate("/blog");
     } catch (error) {
-      alert("Su email o password son invalidos");
+      alert("Su email o password son invalidos.");
       console.error(error)
     }
   }

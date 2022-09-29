@@ -41,17 +41,17 @@ const CreateBlogModal = ({
   return (
     <div>
       <Button color="primary" onClick={handleOpen}>
-        Crear Blog
+        Escribe tu Reseña
       </Button>
       <Modal isOpen={open} toggle={handleOpen}>
-        <ModalHeader toggle={handleOpen}>Nuevo Blog 1</ModalHeader>
+        <ModalHeader toggle={handleOpen}>Escribe la reseña de tu viaje</ModalHeader>
         <Form onSubmit={handleBlog}>
           <ModalBody>
             <CreateBlogForm blog={blog} setBlog={setBlog} />
           </ModalBody>
           <ModalFooter>
             <Button type="submit" color="primary">
-              Crear blog
+              Crear Reseña
             </Button>{" "}
             <Button color="secondary" onClick={handleOpen}>
               Cancelar

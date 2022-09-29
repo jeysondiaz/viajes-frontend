@@ -15,7 +15,7 @@ const LoginForm = () => {
         <Label for="examplePassword">Password</Label>
         <Input
           name="password"
-          placeholder="Password..."
+          placeholder="Contraseña..."
           type="password"
         />
       </FormGroup>

@@ -29,7 +29,7 @@ const BlogInfo = () => {
 
   if (!id) return <Navigate to="/blog" replace />;
 
-  if (!blogInfo) return <Spinner>Loading...</Spinner>;
+  if (!blogInfo) return <Spinner>Cargando...</Spinner>;
 
   return (
     <div className="container pb-5 bg-white h-100 p-0">

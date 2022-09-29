@@ -39,7 +39,7 @@ const CreateUserModal = () => {
         Crear Usuario
       </Button>
       <Modal isOpen={open} toggle={handleOpen}>
-        <ModalHeader toggle={handleOpen}>Login</ModalHeader>
+        <ModalHeader toggle={handleOpen}>Registrate</ModalHeader>
         <Form onSubmit={handleUser}>
           <ModalBody>
             <CreateUserForm user={user} setUser={setUser} />

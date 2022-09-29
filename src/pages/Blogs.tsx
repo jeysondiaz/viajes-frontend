@@ -22,7 +22,7 @@ const Blogs = () => {
 
   return (
     <div className="container pb-5">
-      <Header title="Lista de blogs" />
+      <Header title="Reseñas de Viajes Blog" />
       <CreateBlogModal handleCreation={handleCreation} />
       <Row>
         {blogs.map((value) => (

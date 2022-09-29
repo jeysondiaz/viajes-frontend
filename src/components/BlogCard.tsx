@@ -41,7 +41,7 @@ const BlogCard = ({ blogId, title, date, user }: BlogCardProps) => {
             fecha de creación: {formattedDate}
           </CardSubtitle>
           <CardText>{user}</CardText>
-          <Button onClick={handleClick}>Ver blog</Button>
+          <Button onClick={handleClick}>Leer blog</Button>
         </CardBody>
       </Card>
     </Col>

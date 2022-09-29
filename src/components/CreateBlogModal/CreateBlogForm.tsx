@@ -24,18 +24,18 @@ const CreateBlogForm: FC<CreateBlogFormProps> = ({ blog, setBlog }) => {
           required
           value={blog.title}
           name="title"
-          placeholder="Titulo..."
+          placeholder="Tu viaje en una frase..."
           type="text"
           onChange={(e) => { handleChange(e.target.value, "title") }}
         />
       </FormGroup>
       <FormGroup>
-        <Label for="surname">Contenido</Label>
+        <Label for="surname">Reseña</Label>
         <Input
           required
           value={blog.description}
           name="description"
-          placeholder="Contenido..."
+          placeholder="Escribe aquí tu reseña..."
           type="textarea"
           onChange={(e) => { handleChange(e.target.value, "description") }}
         />
