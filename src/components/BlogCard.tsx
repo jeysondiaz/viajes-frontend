@@ -31,7 +31,7 @@ const BlogCard = ({ blogId, title, date, user }: BlogCardProps) => {
       <Card className="">
         <CardImg
           alt="Card image cap"
-          src="https://picsum.photos/318/180"
+          src="https://picsum.photos/500/250"
           top
           width="100%"
         />

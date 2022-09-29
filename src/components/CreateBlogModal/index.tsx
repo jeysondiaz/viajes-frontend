@@ -12,7 +12,11 @@ import CreateBlogForm from "./CreateBlogForm";
 import { createBlog } from "../../api";
 import IBlog from "../../types/IBlog";
 
-const CreateBlogModal = () => {
+const CreateBlogModal = ({
+  handleCreation,
+}: {
+  handleCreation: () => void;
+}) => {
   const [open, setOpen] = useState(false);
   const [blog, setBlog] = useState<IBlog>({
     title: "",
@@ -26,6 +30,7 @@ const CreateBlogModal = () => {
 
     try {
       await createBlog(blog);
+      handleCreation();
       setOpen(!open);
     } catch (error) {
       console.error(error);

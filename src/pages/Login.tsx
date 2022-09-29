@@ -8,7 +8,7 @@ const Login = () => {
   if (user) return <Navigate to="/blog" replace />;
   return (
     <div className="home">
-      <div className="title">
+      <div className="text-white text-center">
         <h1>Viajes Blog</h1>
         <p>Bienvenidos</p>
       </div>

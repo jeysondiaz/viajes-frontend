@@ -35,7 +35,7 @@ const CreateUserModal = () => {
 
   return (
     <div>
-      <Button color="primary" onClick={handleOpen}>
+      <Button onClick={handleOpen}>
         Crear Usuario
       </Button>
       <Modal isOpen={open} toggle={handleOpen}>

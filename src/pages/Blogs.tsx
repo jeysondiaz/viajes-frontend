@@ -4,6 +4,7 @@ import { Button, Row } from "reactstrap";
 import { getAllBlogs } from "../api/blog";
 import BlogCard from "../components/BlogCard";
 import CreateBlogModal from "../components/CreateBlogModal";
+import Header from "../components/utils/Header";
 import IBlog from "../types/IBlog";
 
 const Blogs = () => {
@@ -11,28 +12,20 @@ const Blogs = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getAllBlogs()
-      .then((response) => setBlogs(response.data))
-      .catch(() => alert("No se han encontrado blogs"));
+    handleCreation();
     // eslint-disable-next-line
   }, []);
 
+  const handleCreation = () => {
+    getAllBlogs()
+      .then((response) => setBlogs(response.data))
+      .catch(() => alert("No se han encontrado blogs"));
+  }
+
   return (
-    <div className="p-5">
-      <div className="d-flex flex-row justify-content-between">
-        <h1 className="pb-2">Lista de blogs</h1>
-        <Button
-          color="danger"
-          className="mb-2"
-          onClick={() => {
-            localStorage.removeItem("USER");
-            navigate("/");
-          }}
-        >
-          Desconectar
-        </Button>
-      </div>
-      <CreateBlogModal />
+    <div className="container pb-5">
+      <Header title="Lista de blogs" />
+      <CreateBlogModal handleCreation={handleCreation} />
       <Row>
         {blogs.map((value) => (
           <BlogCard
