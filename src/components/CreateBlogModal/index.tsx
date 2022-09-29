@@ -44,7 +44,7 @@ const CreateBlogModal = ({
         Crear Blog
       </Button>
       <Modal isOpen={open} toggle={handleOpen}>
-        <ModalHeader toggle={handleOpen}>Nuevo Blog</ModalHeader>
+        <ModalHeader toggle={handleOpen}>Nuevo Blog 1</ModalHeader>
         <Form onSubmit={handleBlog}>
           <ModalBody>
             <CreateBlogForm blog={blog} setBlog={setBlog} />
